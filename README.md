@@ -1,7 +1,3 @@
-Below is the adapted README.md for the **pm2mp** project:
-
----
-
 # pm2mp
 
 **"Seamlessly control your pm2 processes with Python."**
@@ -62,4 +58,3 @@ Usage examples for **pm2mp** will be provided soon. Stay tuned for further updat
 
 ---
 
-This README.md template is designed to evolve as new features and documentation are added. Feel free to open an issue or submit a pull request with any feedback or suggestions for improvement!
