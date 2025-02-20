@@ -12,7 +12,7 @@ const methods = [
 ];
 
 /**
- * Обёртка для подключения к pm2 в виде промиса.
+ * Wrapper for connecting to pm2 using a promise.
  */
 const connectPM2 = () =>
   new Promise((resolve, reject) => {
@@ -20,7 +20,7 @@ const connectPM2 = () =>
   });
 
 /**
- * Обёртка для вызова метода pm2 в виде промиса.
+ * Wrapper for invoking a pm2 method using a promise.
  */
 const callPM2Method = (methodName, args) =>
   new Promise((resolve, reject) => {
@@ -33,8 +33,8 @@ const callPM2Method = (methodName, args) =>
   });
 
 /**
- * Основная функция для вызова метода pm2.
- * Подключается, вызывает метод и в любом случае отключается.
+ * Main function to invoke a pm2 method.
+ * Connects, calls the method, and disconnects regardless of the outcome.
  */
 const runMethod = async (methodName, args) => {
   try {
@@ -47,8 +47,8 @@ const runMethod = async (methodName, args) => {
 };
 
 /**
- * Генерируем объект с методами.
- * Каждый метод возвращает промис, который можно использовать через async/await или .then/.catch.
+ * Generate an object with methods.
+ * Each method returns a promise that can be used with async/await or .then/.catch.
  */
 const methodsObject = methods.reduce((acc, methodName) => {
   acc[methodName] = (args) => runMethod(methodName, args);
@@ -56,4 +56,3 @@ const methodsObject = methods.reduce((acc, methodName) => {
 }, {});
 
 module.exports = methodsObject;
-
