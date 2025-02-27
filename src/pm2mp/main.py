@@ -117,7 +117,7 @@ class PM2MP:
     @dual_method
     def list(
         self,
-        args: List[PM2AppConfig] = [],
+        args: List[PM2AppConfig],
     ) -> List[PM2Response]:
         return self._execude("list", args)
 
